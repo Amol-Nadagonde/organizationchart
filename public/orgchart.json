@@ -1,0 +1,103 @@
+[
+	{
+		"id": 1,
+		"fName": "John",
+		"lName": "Carter",
+		"gender": "male",
+		"image": "https://randomuser.me/api/portraits/med/men/1.jpg",
+		"dob": "12th March 1982",
+		"upTree": null,
+		"downTree": [2, 3, 4, 5],
+		"designation": "CEO"
+	},
+	{
+		"id": 2,
+		"fName": "Olivya",
+		"lName": "Garter",
+		"gender": "female",
+		"image": "https://randomuser.me/api/portraits/med/women/1.jpg",
+		"upTree": 1,
+		"downTree": [6, 7, 8],
+		"designation": "Marketing Chief"
+	},
+	{
+		"id": 3,
+		"fName": "Ken",
+		"lName": "Parker",
+		"gender": "male",
+		"image": "https://randomuser.me/api/portraits/med/men/2.jpg",
+		"upTree": 1,
+		"downTree": [9, 10, 11],
+		"designation": "Designing Head"
+	},
+	{
+		"id": 4,
+		"fName": "Scarlet",
+		"lName": "Johnson",
+		"gender": "female",
+		"image": "https://randomuser.me/api/portraits/med/women/2.jpg",
+		"upTree": 1,
+		"downTree": [12, 13, 14],
+		"designation": "HR Head"
+	},
+	{
+		"id": 5,
+		"fName": "Steve",
+		"lName": "Rogers",
+		"gender": "male",
+		"image": "https://randomuser.me/api/portraits/med/men/3.jpg",
+		"upTree": 1,
+		"downTree": [15, 16, 17],
+		"designation": "Development Head"
+	},
+	{
+		"id": 6,
+		"fName": "Stephen",
+		"lName": "King",
+		"gender": "male",
+		"image": "https://randomuser.me/api/portraits/med/men/4.jpg",
+		"upTree": 2,
+		"downTree": [18, 19, 20],
+		"designation": "Marketing Head (Asia)"
+	},
+	{
+		"id": 7,
+		"fName": "Christohper",
+		"lName": "Nolan",
+		"gender": "male",
+		"image": "https://randomuser.me/api/portraits/med/men/5.jpg",
+		"upTree": 2,
+		"downTree": [21, 22, 23],
+		"designation": "Marketing Head (Pacific)"
+	},
+	{
+		"id": 8,
+		"fName": "Mark",
+		"lName": "Twin",
+		"gender": "male",
+		"image": "https://randomuser.me/api/portraits/med/men/6.jpg",
+		"upTree": 2,
+		"downTree": [24, 25, 26],
+		"designation": "Marketing Head (Europe)"
+	},
+	{
+		"id": 9,
+		"fName": "Fiona",
+		"lName": "Spencer",
+		"gender": "female",
+		"image": "https://randomuser.me/api/portraits/med/women/3.jpg",
+		"upTree": 3,
+		"downTree": [27, 28, 29],
+		"designation": "Senior Designer"
+	},
+	{
+		"id": 10,
+		"fName": "Tina",
+		"lName": "Hillfiger",
+		"gender": "female",
+		"image": "https://randomuser.me/api/portraits/med/women/4.jpg",
+		"upTree": 3,
+		"downTree": [30, 31, 32],
+		"designation": "Senior Designer"
+	}
+]
