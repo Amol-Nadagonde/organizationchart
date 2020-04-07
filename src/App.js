@@ -12,10 +12,22 @@ class App extends React.Component{
   constructor(props){
     super(props);
     this.state = {
+      screenHeight: window.innerHeight + 'px',
       selectedEmpId: 1, /* this property tells which employee is selected to show details on the screen */
       jsonArray: [], /* it is the array of empolyees retrived from database */
       selectedEmpDetails: {}, /* filtered the details of employee, we need to show on left panel */
       reporteeArray: [] /* filtered the reportees of selected employee to show in the right panel */
+    }
+  }
+
+  setHeightOfMainContainer = () => {
+    if(window.innerWidth > 1024 || window.innerHeight > 500){
+      console.log('in if condition');
+      this.setState({
+        screenHeight: (window.innerHeight - 100) + 'px'
+      }, ()=>{
+        console.log("set height to",this.state.screenHeight);
+      })
     }
   }
 
@@ -34,9 +46,12 @@ class App extends React.Component{
     if(empInfo === "empParentNode") {
       return filteredItem[0].upTree
     }
-  }
+  }  
 
   componentDidMount(){
+    this.setHeightOfMainContainer();
+    window.addEventListener("resize", this.setHeightOfMainContainer.bind(this));
+    
     axios.get("orgchart.json")
       .then(result => {
         const jsonArray = result.data;
@@ -60,7 +75,7 @@ class App extends React.Component{
       return(
         <React.Fragment>
           <Header/>
-          <div className="main-body">
+          <div className="main-body" style={{height: `${this.state.screenHeight}`}}>
             <LeftPanel 
               jsonArray={this.state.jsonArray}
               selectedEmpDetails={this.filterEmpInfo(this.state.jsonArray, this.state.selectedEmpId, "empDetails")}
