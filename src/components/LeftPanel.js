@@ -22,12 +22,38 @@ class LeftPanel extends React.Component{
 
     formatContent = (empDetailsObj) => {
         return (
-            <div className="empDetailsContainer">
+            <div className="emp-details-container">
                 <div className="img-section">
                     <img src={empDetailsObj.image} alt="employee" />
                 </div>
                 <p className="emp-name-section">{empDetailsObj.fName} {empDetailsObj.lName}</p>
                 <h4 className="emp-designation">{empDetailsObj.designation}</h4>
+                <div className="emp-details-table">
+                    <div className="emp-details-row">
+                        <p className="emp-property">Name</p>
+                        <p className="emp-detail-value">{empDetailsObj.fName}</p>
+                    </div>
+                    <div className="emp-details-row">
+                        <p className="emp-property">Last Name</p>
+                        <p className="emp-detail-value">{empDetailsObj.lName}</p>
+                    </div>
+                    <div className="emp-details-row">
+                        <p className="emp-property">Id</p>
+                        <p className="emp-detail-value">{empDetailsObj.id}</p>
+                    </div>
+                    <div className="emp-details-row">
+                        <p className="emp-property">Location</p>
+                        <p className="emp-detail-value">{empDetailsObj.location}</p>
+                    </div>
+                    <div className="emp-details-row">
+                        <p className="emp-property">Email</p>
+                        <p className="emp-detail-value email">{`${empDetailsObj.fName}${empDetailsObj.lName}@borngroup.com`.toLowerCase()}</p>
+                    </div>
+                    <div className="emp-details-row">
+                        <p className="emp-property">DoB</p>
+                        <p className="emp-detail-value">{`${empDetailsObj.dob}`.split(' ')[0]} {`${empDetailsObj.dob}`.split(' ')[1].slice(0,3)}</p>
+                    </div>
+                </div>
             </div>
         )
     }

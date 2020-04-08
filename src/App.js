@@ -21,12 +21,9 @@ class App extends React.Component{
   }
 
   setHeightOfMainContainer = () => {
-    if(window.innerWidth > 1024 || window.innerHeight > 500){
-      console.log('in if condition');
+    if(window.innerHeight > 500){
       this.setState({
-        screenHeight: (window.innerHeight - 100) + 'px'
-      }, ()=>{
-        console.log("set height to",this.state.screenHeight);
+        screenHeight: (window.innerHeight - 100) + 'px',
       })
     }
   }

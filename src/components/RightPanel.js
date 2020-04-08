@@ -24,17 +24,6 @@ class RightPanel extends React.Component{
         this.props.onChangeSelectedEmpId(empId);
     }
 
-    componentDidMount(){
-        console.log('in did mount');
-        // for(let i = 0; i < this.state.reporteeArray.length; i++){
-        //     ((i)=>{
-        //         setTimeout(()=>{
-        //             console.log('in timeout');
-        //         }, i * 800)
-        //     })(i);
-        // }
-    }
-
     fetchParentEmployeeOfReportees = () => {
         const filteredItem = this.state.jsonArray.filter(empItem => {
             if(this.state.reporteeArray === empItem.downTree){

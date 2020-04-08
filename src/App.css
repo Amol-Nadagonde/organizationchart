@@ -64,7 +64,8 @@ body {
 
 .left-panel-container {
   background-color: #000;
-  flex-basis: 250px;
+  width: 300px;
+  overflow: hidden;
 }
 .left-panel-container .logo-section {
   margin-bottom: 1px;
@@ -91,12 +92,38 @@ body {
 .marginadjusted{
   margin-top: -4px;
 }
-.empDetailsContainer {
+.emp-details-container {
   margin-top: 20px;
+  padding: 0 5px;
   text-align: center;
+}
+.img-section {
+  margin-bottom: 15px;
 }
 .left-panel-container .img-section img {
   border: 5px solid #fff;
+}
+.emp-details-row {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px dotted #fff;
+  margin-bottom: 12px;
+}
+.emp-property {
+  width: 50%;
+  text-align: left;
+}
+.emp-details-table {
+  margin-top: 15px;
+}
+.emp-detail-value {
+  width: 50%;
+  text-align: right;
+}
+.emp-detail-value.email {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .reportee-container {
