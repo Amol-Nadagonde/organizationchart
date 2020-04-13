@@ -64,7 +64,7 @@ body {
 
 .left-panel-container {
   background-color: #000;
-  width: 300px;
+  min-width: 300px;
   overflow: hidden;
 }
 .left-panel-container .logo-section {
@@ -139,7 +139,7 @@ body {
 }
 .reportee-item {
   margin-right: 20px;
-  max-width: 250px;
+  width: 140px;
   text-align: center;
 }
 .reportee-item:hover {

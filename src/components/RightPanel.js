@@ -1,4 +1,33 @@
 import React from 'react';
+import {useTrail, animated} from 'react-spring';
+
+const SpringAnimation = ({arrayToAnimate, onClickFunction}) => {
+    const animatedTrail = useTrail(arrayToAnimate.length, {
+        from: { marginTop: -10, opacity: 0, transform: 'translate3d(0,-20px,0)' },
+        to: { marginTop: 10, opacity: 1, transform: 'translate3d(0,0px,0)' }
+    });
+    return (
+        <React.Fragment>
+          {animatedTrail.map((props, index)=>{
+            return(
+                <animated.div 
+                    style={props} 
+                    className="reportee-item"
+                    key={index} 
+                    id={arrayToAnimate[index].id}
+                    onClick={()=>onClickFunction(arrayToAnimate[index].id)}
+                >
+                    <div className="img-section">
+                        <img src={arrayToAnimate[index].image} alt="employee" />
+                    </div>
+                    <p>{`${arrayToAnimate[index].fName} ${arrayToAnimate[index].lName}`}</p>
+                    <h4>{arrayToAnimate[index].designation}</h4>
+                </animated.div>
+            )
+          })}
+        </React.Fragment>
+      )
+}
 
 class RightPanel extends React.Component{
     constructor(props){
@@ -6,8 +35,7 @@ class RightPanel extends React.Component{
 
         this.state = {
             jsonArray: this.props.jsonArray,
-            reporteeArray: this.props.reporteeArray,
-            tempArray: [] /* this array is to render the reportee one after another */
+            reporteeArray: this.props.reporteeArray
         }
     }
 
@@ -41,22 +69,12 @@ class RightPanel extends React.Component{
             if( this.state.reporteeArray.includes(empItem.id) ){
                 return empItem
             } else return null
-        }).map((empItem, index)=>{
-            return(
-                <div className="reportee-item" key={index} onClick={()=>this.onChangeSelectedEmpId(empItem.id)}>
-                    <div className="img-section">
-                        <img src={empItem.image} alt="employee" />
-                    </div>
-                    <p>{`${empItem.fName} ${empItem.lName}`}</p>
-                    <h4>{empItem.designation}</h4>
-                </div>
-            )            
-        })
+        });
         return (
             <div className="right-panel-container padding10 fullwidth">
-                <h3 className="reportee-title">{managerDetails} has the following reportees:</h3>
+                <h3 className="reportee-title">{managerDetails} {reporteeArrayContent.length ? `has the following reportees:` : `has no reportees.`}</h3>
                 <div className="reportee-container">
-                    {reporteeArrayContent}
+                    <SpringAnimation arrayToAnimate={reporteeArrayContent} onClickFunction={this.onChangeSelectedEmpId} />
                 </div>
             </div>
         );
