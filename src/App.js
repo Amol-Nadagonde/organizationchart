@@ -71,7 +71,10 @@ class App extends React.Component{
     if(this.state.jsonArray.length){
       return(
         <React.Fragment>
-          <Header/>
+          <Header
+            jsonArray={this.state.jsonArray}
+            onClickFilteredEmpItem = {(empId)=>this.onChangeSelectedEmpId(empId)}
+          />
           <div className="main-body" style={{height: `${this.state.screenHeight}`}}>
             <LeftPanel 
               jsonArray={this.state.jsonArray}

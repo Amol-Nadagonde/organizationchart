@@ -3,8 +3,8 @@ import {useTrail, animated} from 'react-spring';
 
 const SpringAnimation = ({arrayToAnimate, onClickFunction}) => {
     const animatedTrail = useTrail(arrayToAnimate.length, {
-        from: { marginTop: -10, opacity: 0, transform: 'translate3d(0,-20px,0)' },
-        to: { marginTop: 10, opacity: 1, transform: 'translate3d(0,0px,0)' }
+        from: { marginTop: -20, opacity: 0, transform: 'translate3d(0,-20px,0)' },
+        to: { marginTop: 20, opacity: 1, transform: 'translate3d(0,0px,0)' }
     });
     return (
         <React.Fragment>

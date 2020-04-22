@@ -55,6 +55,29 @@ body {
   flex-basis: 50%;
   justify-content: flex-end;
   padding-right: 10px;
+  position: relative;
+}
+.search-input {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  padding: 10px;
+}
+.search-list-panel {
+  background: #fff;
+  border: 1px solid #000;
+  position: absolute;
+  right: 9px;
+  top: 44px;
+  width: 208px
+}
+.search-list-item {
+  cursor: pointer;
+  padding: 8px;
+  border-bottom: 1px dotted #000;
+}
+.search-list-item:last-child {
+  border-bottom: none;
 }
 
 .main-body {
